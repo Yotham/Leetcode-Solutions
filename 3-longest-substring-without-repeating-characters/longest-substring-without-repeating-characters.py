@@ -6,7 +6,7 @@ class Solution(object):
         """
         if len(s) == 1:
             return 1
-        strings = []
+        top = 0
         for i in range(len(s)):
             characters = []
             characters.append(s[i])
@@ -15,11 +15,11 @@ class Solution(object):
                     characters.append(s[j])
                 else:
                     break
-            if "".join(characters) not in strings:
-                strings.append("".join(characters))
-        if strings == []:
-            return 0 
-        return len(max(strings,key=len))
+            newS = "".join(characters)
+            if len(newS) > top:
+                top = len(newS)
+
+        return top
 
             
         
