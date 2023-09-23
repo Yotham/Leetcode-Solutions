@@ -4,22 +4,19 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-        if len(s) == 1:
-            return 1
-        top = 0
-        for i in range(len(s)):
-            characters = []
-            characters.append(s[i])
-            for j in range(i+1,len(s)):
-                if s[j] not in characters:
-                    characters.append(s[j])
-                else:
-                    break
-            newS = "".join(characters)
-            if len(newS) > top:
-                top = len(newS)
-
-        return top
+        if len(s) == 0:
+            return 0
+        l = len(s)
+        seen = {}
+        maxL = 0
+        startVal = 0 
+        for i in range(l):
+            if s[i] in seen and startVal <= seen[s[i]]:
+                startVal = seen[s[i]]+1
+            else:
+                maxL = max(maxL,i-startVal+1)
+            seen[s[i]] = i
+        return maxL
 
             
         
