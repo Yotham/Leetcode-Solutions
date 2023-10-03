@@ -5,12 +5,11 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        final_dict = {}
+        dictionary = {}
         for i in range(len(nums)):
-            if target - nums[i] in final_dict:
-                return [final_dict[target - nums[i]], i]
-            final_dict[nums[i]] = i
-        return []
-
+            if target - nums[i] in dictionary:
+                return [dictionary[target-nums[i]],i]
+            dictionary[nums[i]] = i
+            
 
             
