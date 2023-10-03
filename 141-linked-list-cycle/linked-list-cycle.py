@@ -10,14 +10,14 @@ class Solution(object):
         :type head: ListNode
         :rtype: bool
         """
-        links = []
-        while head:
-            if head.next not in links:
-                links.append(head.next)
-            else:
+        if head is None or head.next is None:
+            return False
+        itr = head
+        Map = {}
+        while itr:
+            if itr in Map.keys():
                 return True
-            head = head.next
-
+            else:
+                Map[itr] = 1
+            itr = itr.next  
         return False
-
-        
