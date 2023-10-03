@@ -15,7 +15,7 @@ class Solution(object):
         itr = head
         Map = {}
         while itr:
-            if itr in Map.keys():
+            if Map.get(itr):
                 return True
             else:
                 Map[itr] = 1
