@@ -1,18 +1,16 @@
 class Solution(object):
-    def DFS(self,image,sr,sc,cur,target):
-        if sr >= len(image) or sr < 0 or sc >= len(image[0]) or sc < 0:
-            return
-        if image[sr][sc] != cur:
-            return
-        image[sr][sc] = target
-        self.DFS(image,sr+1,sc,cur,target)
-        self.DFS(image,sr-1,sc,cur,target)
-        self.DFS(image,sr,sc+1,cur,target)
-        self.DFS(image,sr,sc-1,cur,target)
 
         
-
-
+    def DFS(self,image,sr,sc,og,target):
+        if (sr < 0 or sr >= len(image) or sc < 0 or sc >= len(image[0])):
+            return
+        if image[sr][sc] != og:
+            return
+        image[sr][sc] = target
+        self.DFS(image,sr+1,sc,og,target)
+        self.DFS(image,sr-1,sc,og,target)
+        self.DFS(image,sr,sc+1,og,target)
+        self.DFS(image,sr,sc-1,og,target)
 
     def floodFill(self, image, sr, sc, color):
         """
