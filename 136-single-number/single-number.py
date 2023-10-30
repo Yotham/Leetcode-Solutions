@@ -5,4 +5,4 @@ class Solution(object):
         :rtype: int
         """
     
-        return  [num for num in nums if nums.count(num) == 1][0]
+        return [num for num in nums if nums.count(num) == 1][0]
