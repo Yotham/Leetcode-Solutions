@@ -10,20 +10,36 @@ class Solution(object):
         :type list2: Optional[ListNode]
         :rtype: Optional[ListNode]
         """
-        front = curr = ListNode()
-        while(list1 != None and list2 != None):
-            if(list1.val > list2.val):
-                curr.next = list2
-                list2 = list2.next
-            else:
-                curr.next = list1
-                list1 = list1.next
-            curr = curr.next
-        if(list1 == None):
-            curr.next = list2
-        if(list2 == None):
-            curr.next = list1
-        return front.next
+        l1 = []
+        l2 = []
+
+        while list1:
+            l1.append(list1.val)
+            list1 = list1.next
+        while list2:
+            l2.append(list2.val)
+            list2 = list2.next
+
+        if len(l1) == 0 and len(l2) == 0:
+            return None
+        ret = None
+
+
+        fList = list(sorted(l1+l2))
+        i = 0
+        ret = ListNode()
+        first = ret
+        ret.next = ListNode()
+        ret = ret.next
+        for i in range(len(fList)):
+            ret.val = fList[i]
+            if i != len(fList)-1:
+                ret.next = ListNode()
+            
+            ret = ret.next
+
+        return first.next
+        
             
                 
                 
