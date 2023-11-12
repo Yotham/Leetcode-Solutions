@@ -4,15 +4,13 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
-
-        
 class Solution(object):
     def invertTree(self, root):
         """
         :type root: TreeNode
         :rtype: TreeNode
         """
-
+        
         if root is None:
             return None
         
@@ -21,5 +19,3 @@ class Solution(object):
         self.invertTree(root.right)
         
         return root
-
-            
