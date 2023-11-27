@@ -4,13 +4,19 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
-        storage = []
+        stack = []
         for char in s:
-            if char in "{([":
-                storage.append(char)
+            if char in "({[":
+                stack.append(char)
             else:
-                if not storage or (char == "}" and storage[-1] != "{") or (char == "]" and storage[-1] != "[") or (char == ")" and storage[-1] != "("):
+                if not stack \
+                 or (char == ')' and stack[-1] != "(") or \
+                 (char == '}' and stack[-1] != "{") or \
+                 (char == "]" and stack[-1] != "["):
                     return False
                 else:
-                    storage.pop()
-        return not storage
+                    stack.pop()
+
+        return not stack
+
+                
