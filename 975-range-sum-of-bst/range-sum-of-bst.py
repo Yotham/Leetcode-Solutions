@@ -23,6 +23,8 @@ class Solution(object):
             return None
         s = []
         self.dfs(root,low,high,s)
-        return sum(s)
+        sol = sum(s)
+        del s
+        return sol
 
         
