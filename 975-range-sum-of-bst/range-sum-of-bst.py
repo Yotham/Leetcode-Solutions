@@ -19,6 +19,8 @@ class Solution(object):
         :type high: int
         :rtype: int
         """
+        if root is None:
+            return None
         s = []
         self.dfs(root,low,high,s)
         return sum(s)
