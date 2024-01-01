@@ -24,7 +24,6 @@ class Solution(object):
         s = []
         self.dfs(root,low,high,s)
         sol = sum(s)
-        del s
         return sol
 
         
