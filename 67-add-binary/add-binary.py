@@ -5,27 +5,24 @@ class Solution(object):
         :type b: str
         :rtype: str
         """
+        num1 = 0
+        pwr = 0
+        num2 = 0
+        pwr2 = 0
+        for num in reversed(a):
+            num1 += int(num)*(2**pwr)
+            pwr+=1
+        for num in reversed(b):
+            num2+= int(num)*(2**pwr2)
+            pwr2+=1
+        total = num1+num2
+        out = ""
+        pwr = 0
+        if total == 0:
+            return '0'
+        while total > 0:
+            out += str(total%2)
+            total = total // 2
+        return out[::-1]
+            
         
-        pow1 = len(a)-1
-        pow2 = len(b)-1
-        sum1 = 0
-        sum2 = 0
-        itr = 0
-        itr2 = 0
-        for x in a:
-            sum1 += int(x) * pow(2,pow1)
-            pow1-=1
-        for x in b:
-            sum2 += int(x) * pow(2,pow2)
-            pow2-=1
-        total = sum1+sum2
-        str1 = ""
-        q = total
-        while(q != 0):
-            r = q%2
-            str1 += str(r)
-            q = q/2
-        str1 = str1[::-1]
-        if(str1 == ""):
-            return "0"
-        return str1
