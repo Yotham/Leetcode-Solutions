@@ -6,7 +6,9 @@ class ParkingSystem(object):
         :type medium: int
         :type small: int
         """
-        self.storage = {"big":big,"medium":medium,"small":small}
+        self.big = big
+        self.medium = medium
+        self.small = small
         
 
     def addCar(self, carType):
@@ -15,20 +17,20 @@ class ParkingSystem(object):
         :rtype: bool
         """
         if carType == 1:
-            if self.storage["big"] > 0:
-                self.storage["big"]-=1
+            if self.big > 0:
+                self.big-=1
                 return True
             else:
                 return False
         elif carType == 2:
-            if self.storage["medium"] > 0:
-                self.storage["medium"]-=1
+            if self.medium > 0:
+                self.medium-=1
                 return True
             else:
                 return False
         elif carType == 3:
-            if self.storage["small"] > 0:
-                self.storage["small"]-=1
+            if self.small > 0:
+                self.small-=1
                 return True
             else:
                 return False
