@@ -10,7 +10,6 @@ class ParkingSystem(object):
         self.medium = medium
         self.small = small
         
-
     def addCar(self, carType):
         """
         :type carType: int
