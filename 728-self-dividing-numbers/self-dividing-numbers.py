@@ -10,8 +10,13 @@ class Solution(object):
             temp = str(i)
             check = True
             for c in temp:
-                if int(c) == 0 or i % int(c) != 0:
+                try:
+                    if i % int(c) != 0:
+                        check = False
+                        break
+                except:
                     check = False
+                    break
             if check:
                 r.append(i)
         return r
