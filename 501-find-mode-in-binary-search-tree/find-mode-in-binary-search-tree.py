@@ -18,13 +18,11 @@ class Solution(object):
         """
         l = []
         self.dfs(root,l)
-        print(l)
         maxCount = 0
         for val in l:
             count = l.count(val)
             if count > maxCount:
                 maxCount = count
-        print(maxCount)
         output = []
         add = [output.append(val) for val in l if l.count(val) == maxCount and val not in output]
         return output
