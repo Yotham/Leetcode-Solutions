@@ -5,9 +5,10 @@ class Solution(object):
         :type nums2: List[int]
         :rtype: List[int]
         """
-        storage = []
-        for num in (nums1 + nums2):
+        storage = set(nums2+nums1)
+        final = []
+        for num in storage:
             if num in nums1 and num in nums2:
-                if num not in storage:
-                    storage.append(num)
-        return storage
+                final.append(num)
+        return final
+        
