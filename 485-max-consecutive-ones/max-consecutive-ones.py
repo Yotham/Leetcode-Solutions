@@ -16,5 +16,4 @@ class Solution(object):
         if c > maxC:
             return c
         return maxC
-        return max(con)
             
