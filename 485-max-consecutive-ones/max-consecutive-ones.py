@@ -4,15 +4,17 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        con = []
         c = 0
+        maxC = float('-inf')
         for i in range(len(nums)):
             if nums[i] == 1:
-                print(i)
                 c+=1
             else:
-                con.append(c)
+                if c > maxC:
+                    maxC = c
                 c = 0
-        con.append(c)
+        if c > maxC:
+            return c
+        return maxC
         return max(con)
             
