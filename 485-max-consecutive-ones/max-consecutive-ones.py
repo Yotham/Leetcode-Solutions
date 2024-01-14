@@ -5,7 +5,7 @@ class Solution(object):
         :rtype: int
         """
         c = 0
-        maxC = float('-inf')
+        maxC = -1
         for i in range(len(nums)):
             if nums[i] == 1:
                 c+=1
