@@ -3,11 +3,10 @@ public:
     bool containsDuplicate(vector<int>& nums) {
         std::set <int> check;
         for(int i = 0; i < nums.size(); i++){
-            check.insert(nums[i]);
-            
-        }
-        if (check.size() != nums.size()){
-            return true;
+            auto s = check.insert(nums[i]);
+            if(s.second == false){
+                return true;
+            }
         }
         return false;
     }
