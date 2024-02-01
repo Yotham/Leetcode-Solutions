@@ -8,8 +8,8 @@ class Solution(object):
         if len(s) != len(t):
             return False
         for item in s:
-            if s.count(item) != t.count(item):
+            if t.count(item) != s.count(item):
                 return False
-        return True
 
+        return True
         
