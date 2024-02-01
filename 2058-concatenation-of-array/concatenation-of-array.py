@@ -4,5 +4,4 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
-        nums2 = nums
-        return nums+nums2
+        return nums+nums
