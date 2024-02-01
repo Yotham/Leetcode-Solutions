@@ -5,5 +5,11 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
-        return sorted(s) == sorted(t)
+        if len(s) != len(t):
+            return False
+        for item in set(s):
+            if t.count(item) != s.count(item):
+                return False
+
+        return True
         
