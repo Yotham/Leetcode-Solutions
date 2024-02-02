@@ -13,7 +13,6 @@ class Solution(object):
                     compare+=character
                     if index < len(s)-1:
                         index+=1
-        print(compare)
         if compare == s:
             return True
 
