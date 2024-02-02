@@ -5,15 +5,17 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
-        final = ""
-        index = 0
-        for letter in t:
-            if letter in s:
-                temp = final
-                temp += letter
-                if temp[index] == s[index]:
-                    final+=letter
-                    index += 1
-        if s == final:
+        compare = ""
+        index =0
+        for character in t:
+            if character in s and compare.count(character) < s.count(character):
+                if s[index] == character:
+                    compare+=character
+                    if index < len(s)-1:
+                        index+=1
+        print(compare)
+        if compare == s:
             return True
+
         return False
+                
