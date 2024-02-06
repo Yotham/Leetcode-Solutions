@@ -9,8 +9,8 @@ class Solution(object):
         counts = defaultdict(int)
         for num in nums:
             counts[num] += 1
-        counts = sorted(counts.items(), key = lambda x :x[1],reverse = True)
-        return [item[0] for item in counts[:k]]
+        counts = [item[0] for item in sorted(counts.items(), key = lambda x :x[1],reverse = True)[:k]]
+        return counts
                     
         
         
