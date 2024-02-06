@@ -6,10 +6,9 @@ class Solution(object):
         :type k: int
         :rtype: List[int]
         """
-        counts = {}
-        for num in set(nums):
-            count = nums.count(num)
-            counts[num] = count
+        counts = defaultdict(int)
+        for num in nums:
+            counts[num] += 1
         counts = sorted(counts.items(), key = lambda x :x[1],reverse = True)
         return [item[0] for item in counts[:k]]
                     
