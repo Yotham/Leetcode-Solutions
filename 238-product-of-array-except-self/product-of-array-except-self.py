@@ -9,7 +9,6 @@ class Solution(object):
         for i in range(len(nums)):
             ret[i] *= prefix
             prefix *= nums[i]
-        print(ret)
         postfix = 1
         for i in range(len(nums)-1,-1,-1):
             ret[i] *= postfix
