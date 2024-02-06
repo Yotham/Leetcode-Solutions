@@ -7,8 +7,8 @@ class Solution(object):
         :rtype: List[int]
         """
         counts = defaultdict(int)
-        for num in nums:
-            counts[num] += 1
+        for num in set(nums):
+            counts[num] = nums.count(num)
         return [item[0] for item in sorted(counts.items(), key = lambda x :x[1],reverse = True)[:k]]
                     
         
