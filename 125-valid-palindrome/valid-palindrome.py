@@ -5,7 +5,5 @@ class Solution(object):
         :rtype: bool
         """
         alphaS = ''.join([char.lower() for char in s if char.isalnum()])
-        if alphaS == alphaS[::-1]:
-            return True
-        return False
+        return alphaS == alphaS[::-1]
         
