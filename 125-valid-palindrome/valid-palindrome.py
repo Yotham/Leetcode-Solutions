@@ -4,10 +4,7 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
-        alphaS = ""
-        for char in s:
-            if char.isalnum():
-                alphaS+=char.lower()
+        alphaS = ''.join([char.lower() for char in s if char.isalnum()])
         if alphaS == alphaS[::-1]:
             return True
         return False
