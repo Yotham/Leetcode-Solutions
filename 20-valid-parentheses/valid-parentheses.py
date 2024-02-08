@@ -6,13 +6,13 @@ class Solution(object):
         """
         stack = []
         for char in s:
-            if char in "({[":
+            if char in '({[':
                 stack.append(char)
             else:
-                if not stack \
-                 or (char == ')' and stack[-1] != "(") or \
-                 (char == '}' and stack[-1] != "{") or \
-                 (char == "]" and stack[-1] != "["):
+                if not stack:
+                    return False
+                begin = stack[-1]
+                if (begin != '(' and char == ')' )or (begin != '[' and char == ']') or (begin != '{' and char == '}'):
                     return False
                 else:
                     stack.pop()
