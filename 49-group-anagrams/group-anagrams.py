@@ -4,12 +4,19 @@ class Solution(object):
         :type strs: List[str]
         :rtype: List[List[str]]
         """
-        res = defaultdict(list)
-        for word in strs:
-            count = [0] * 26
-            for c in word:
-                count[ord(c) - ord("a")] += 1
-            res[tuple(count)].append(word)
-        return res.values()
 
-           
+        storage = {}
+        for string in strs:
+            storage[''.join(sorted(string))] = []
+
+        for string in strs:
+            key = ''.join(sorted(string))
+            if key in storage:
+                storage[key].append(string)
+
+        final = []
+
+        for item in storage.values():
+            final.append(item)
+
+        return final
